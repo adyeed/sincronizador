@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mx.ine.sscc.modelo.entidad.unicom"
+	schema="CREDENCIALEXTRANJERO">
+	<class name="AnalisisRegistralUnicom" table="ANALISISREGISTRAL">
+		<comment>Mapeo de la tabla FUAR (CREDENCIALEXTRANJERO)</comment>
+
+		<id name="ciudadanoId">
+			<column name="CIUDADANO_ID" />
+		</id>
+		<property name="solicitudMacId">
+				<column name="SOLICITUDMAC_ID" />
+		</property>
+		<property name="tipoSituacionAnalisisRegistral">
+			<column name="TIPOSITUACIONANALISISREGISTRAL" />
+		</property>
+		<property name="inicioTramite" type="java.sql.Timestamp">
+			<column name="INICIO_TRAMITE" sql-type="DATE" />
+		</property>
+		<property name="adscripcionAutJud">
+			<column name="ADSCRIPCION_AUT_JUD" />
+		</property>
+		<property name="tipoResolucion">
+			<column name="TIPO_RESOLUCION" />
+		</property>
+		<property name="fechaComunico" type="java.sql.Timestamp">
+			<column name="FECHA_COMUNICO" sql-type="DATE" />
+		</property>
+		<property name="juzgado">
+			<column name="JUZGADO" />
+		</property>
+		<property name="causaPenal">
+			<column name="CAUSA_PENAL" />
+		</property>
+		<property name="nombreOfiRepMexicoExt">
+			<column name="NOMBRE_OFI_REP_MEXICO_EXT" />
+		</property>
+		<property name="paisResidencia">
+			<column name="PAIS_RESIDENCIA" />
+		</property>
+		<property name="nombre">
+			<column name="NOMBRE_C" />
+		</property>
+		<property name="apellidoPaterno">
+			<column name="APELLIDO_PATERNO_C" />
+		</property>
+		<property name="apellidoMaterno">
+			<column name="APELLIDO_MATERNO_C" />
+		</property>
+		<property name="fechaNacimiento" type="java.sql.Timestamp">
+			<column name="FECHA_NACIMIENTO_C" sql-type="DATE" />
+		</property>
+		<property name="lugarNacimiento">
+			<column name="LUGAR_DE_NACIMIENTO_C" />
+		</property>
+		<property name="adscripcionAutJudC">
+			<column name="ADSCRIPCION_AUT_JUD_C" />
+		</property>
+		<property name="tipoResolucionC">
+			<column name="TIPO_RESOLUCION_C" />
+		</property>
+		<property name="numeroExpediente">
+			<column name="NUM_EXPEDIENTE_C" />
+		</property>
+		<property name="numeroOficioRespC">
+			<column name="NUM_OFICIO_RESP_C" />
+		</property>
+		<property name="fechaTramite" type="java.sql.Timestamp">
+			<column name="FECHA_TRAMITE_C" sql-type="DATE" />
+		</property>
+		<property name="numeroTramite">
+			<column name="NUMERO_TRAMITE_C" />
+		</property>
+		<property name="calleTramite">
+			<column name="CALLE_TRAMITE_C" />
+		</property>
+		<property name="coloniaTramite">
+			<column name="COLONIA_TRAMITE_C" />
+		</property>
+		<property name="municipioTramite">
+			<column name="MUNICIPIO_TRAMITE_C" />
+		</property>
+		<property name="estadoTramite">
+			<column name="ESTADO_TRAMITE_C" />
+		</property>
+		<property name="paisTramite">
+			<column name="PAIS_TRAMITE_C" />
+		</property>
+		<property name="fuar">
+			<column name="FUAR" />
+		</property>
+		<property name="procesoSincronizacionId">
+			<column name="PROCESOSINCRONIZACION_ID" />
+		</property>		
+
+	</class>
+</hibernate-mapping>

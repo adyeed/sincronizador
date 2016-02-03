@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mx.ine.sscc.modelo.entidad.siirfe"
+	schema="CONCILIACIONES">
+	<class name="ConsultaExternaSiirfe" table="CONSULTAEXTERNA">
+		<comment>Mapeo de la tabla ConsultaExterna (CONSULTAEXTERNA)</comment>
+
+		<id name="ciudadanoId">
+			<column name="CIUDADANO_ID" />
+		</id>
+		<property name="credencialId">
+			<column name="CREDENCIAL_ID" />
+		</property>
+		<property name="claveElector">
+			<column name="CLAVE_ELECTOR" />
+		</property>
+		<property name="numeroEmisionCredencial">
+			<column name="NUM_EMISION_CREDENCIAL" />
+		</property>
+		<property name="ocr">
+			<column name="OCR" />
+		</property>
+		<property name="cic">
+			<column name="CIC" />
+		</property>
+		<property name="curp">
+			<column name="CURP" />
+		</property>
+		<property name="fechaInscripcionPadron" type="java.sql.Timestamp">
+			<column name="FECHA_INSCRIPCION_PADRON" sql-type="DATE" />
+		</property>
+		<property name="nombre">
+			<column name="NOMBRE" />
+		</property>
+		<property name="apellidoPaterno">
+			<column name="APELLIDO_PATERNO" />
+		</property>
+		<property name="apellidoMaterno">
+			<column name="APELLIDO_MATERNO" />
+		</property>
+		<property name="estatusCiudadanoId">
+			<column name="ESTATUSCIUDADANO_ID" />
+		</property>
+		<property name="tipoBajaPadronId">
+			<column name="TIPOBAJAPADRON_ID" />
+		</property>
+		<property name="residenteExtranjero">
+			<column name="RESIDENTE_EXTRANJERO" />
+		</property>
+		<property name="fechaCreacion" type="java.sql.Timestamp">
+			<column name="FECHA_CREACION" sql-type="DATE" />
+		</property>
+		<property name="fechaUltimoTramite" type="java.sql.Timestamp">
+			<column name="FECHA_ULTIMO_TRAMITE" sql-type="DATE" />
+		</property>
+		<property name="vigenciaCredencial" type="java.sql.Timestamp">
+			<column name="VIGENCIA_CREDENCIAL" sql-type="DATE" />
+		</property>
+		<property name="entidad">
+			<column name="ENTIDAD" />
+		</property>
+		<property name="seccion">
+			<column name="SECCION" />
+		</property>
+		<property name="tipoReincorporacionPadronId">
+			<column name="TIPOREINCORPORACIONPADRON_ID" />
+		</property>
+		<property name="reporteRoboExtravioId">
+			<column name="REPORTEROBOEXTRAVIO_ID" />
+		</property>
+		<property name="estatusRoboExtravioId">
+			<column name="ESTATUSROBOEXTRAVIO_ID" />
+		</property>
+		<property name="causaRoboExtravioId">
+			<column name="CAUSAROBOEXTRAVIO_ID" />
+		</property>
+		<property name="controlSincronizacion">
+			<column name="CONTROL_SINCRONIZACION" />
+		</property>
+		<property name="procesoSincronizacionId">
+			<column name="PROCESOSINCRONIZACION_ID" />
+		</property>		
+	</class>
+</hibernate-mapping>

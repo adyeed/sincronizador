@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mx.ine.sscc.modelo.entidad"
+	schema="CREDENCIALEXTRANJERO">
+	<class name="ConfirmacionCPVE" table="CONFIRMACIONCPVE">
+		<comment>Mapeo de la tabla CONFIRMACIONCPVE (CREDENCIALEXTRANJERO)</comment>
+
+		<id name="folioSi">
+			<column name="FOLIO_SI" />
+		</id>
+		<property name="numeroCic">
+				<column name="NUM_CIC" />
+		</property>
+		<property name="correoElectronico">
+			<column name="CORREO_ELECTRONICO" />
+		</property>
+		<property name="telefono">
+			<column name="NUM_TELEFONO" />
+		</property>
+		<property name="fechaAlta" type="java.sql.Timestamp">
+			<column name="FECHA_ALTA" sql-type="DATE" />
+		</property>
+		<property name="fechaActualizacion" type="java.sql.Timestamp">
+			<column name="FECHA_ACTUALIZACION" sql-type="DATE" />
+		</property>	
+		<property name="estatusEnvio">
+			<column name="ESTATUS_ENVIO" />
+		</property>
+			
+	</class>
+</hibernate-mapping>

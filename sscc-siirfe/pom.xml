@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>mx.ine.sscc.siirfe</groupId>
+	<artifactId>sscc-siirfe</artifactId>
+	<packaging>pom</packaging>
+	<name>sscc-siirfe</name>
+	<parent>
+		<groupId>mx.org.ife.rfe.siirfe.pom</groupId>
+		<artifactId>pom-aplicaciones</artifactId>
+		<version>6.0.1.0.0</version>
+		<relativePath>../pom-aplicaciones/pom.xml</relativePath>
+	</parent>
+	<dependencyManagement>
+		<dependencies>
+			<!-- Aspectos -->
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>3.1</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>1.3.2</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-dbcp</groupId>
+				<artifactId>commons-dbcp</artifactId>
+				<version>1.4</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.activemq</groupId>
+				<artifactId>activemq-all</artifactId>
+				<version>5.5.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jcl-over-slf4j</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sun.xml.bind</groupId>
+				<artifactId>jaxb-impl</artifactId>
+				<version>2.2.6</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+	<properties>
+		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>ISO-8859-1</project.reporting.outputEncoding>
+		<org.aspectj.version>1.6.11</org.aspectj.version>
+		<log4j.version>1.2.17</log4j.version>
+		<slf4j.version>1.5.11</slf4j.version>
+		<spring.version>3.2.7.RELEASE</spring.version>
+	</properties>
+	<version>1.0.0</version>
+	<description>SISTEMA SSCC SIIRFE</description>
+	<modules>
+		<module>sscc-ear-siirfe</module>
+		<module>sscc-api-siirfe</module>
+		<module>sscc-modelo-siirfe</module>
+		<module>sscc-web-siirfe</module>
+
+	</modules>
+</project>

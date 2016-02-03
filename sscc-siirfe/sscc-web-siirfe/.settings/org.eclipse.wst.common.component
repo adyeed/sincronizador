@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="sscc-siirfe">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="sscc-api-siirfe-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/sscc-api-siirfe/sscc-api-siirfe">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="sscc-modelo-siirfe-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/sscc-modelo-siirfe/sscc-modelo-siirfe">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/entidades-externas-web/target/classes"/>
+        <property name="component.exclusion.patterns"/>
+        <property name="context-root" value="sscc-web-siirfe"/>
+    </wb-module>
+</project-modules>

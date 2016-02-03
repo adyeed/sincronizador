@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mx.ine.sscc.modelo.entidad"
+	schema="CREDENCIALEXTRANJERO">
+	<class name="SituacionRegistral" table="SITUACIONREGISTRAL">
+		<comment>Mapeo de la tabla SITUACIONREGISTRAL (CREDENCIALEXTRANJERO)</comment>
+
+		<composite-id name="id"
+			class="mx.ine.sscc.modelo.entidad.SituacionRegistralPK">
+			<key-property name="folioSi" type="string">
+				<column name="FOLIO_SI" length="14" />
+			</key-property>
+			<key-property name="cuestionarioId" type="java.lang.Integer">
+				<column name="CUESTIONARIO_ID" precision="2" scale="0" />
+			</key-property>
+		</composite-id>
+
+		<property name="fechaUltimaAct" type="java.sql.Timestamp">
+			<column name="FECHA_ULTIMA_ACT" sql-type="DATE" />
+		</property>
+		<property name="fechaInicio" type="java.sql.Timestamp">
+			<column name="FECHA_INICIO" sql-type="DATE" />
+		</property>
+		<property name="fechaLimite" type="java.sql.Timestamp">
+			<column name="FECHA_LIMITE" sql-type="DATE" />
+		</property>
+		<many-to-one name="estatuSituacionRegistral" column="ESTATUS_ID"
+			lazy="false" class="mx.ine.sscc.modelo.entidad.EstatusSituacionRegistral" />
+
+		<property name="estatus">
+			<column name="ESTATUS_ENVIO" />
+		</property>
+		<property name="fechaActualizacion" type="java.sql.Timestamp">
+			<column name="FECHA_ACTUALIZACION" sql-type="DATE" />
+		</property>
+
+		<bag name="respuestases" table="RESPUESTAS" lazy="false">
+			<key>
+				<column name="FOLIO_SI" length="14" not-null="true" />
+				<column name="CUESTIONARIO_ID" precision="2" scale="0"
+					not-null="true" />
+			</key>
+			<one-to-many class="mx.ine.sscc.modelo.entidad.Respuestas" />
+		</bag>
+
+	</class>
+</hibernate-mapping>

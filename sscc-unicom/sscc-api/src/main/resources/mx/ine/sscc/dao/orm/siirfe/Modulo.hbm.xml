@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mx.ine.sscc.modelo.entidad.siirfe"
+	schema="CONCILIACIONES">
+	<class name="Modulo" table="MODULO">
+		<comment>Mapeo de la tabla FUAR (CONCILIACIONES)</comment>
+
+		<id name="moduloId">
+			<column name="MODULO_ID" />
+		</id>
+		
+		<property name="modulo">
+			<column name="MODULO" />
+		</property>
+		<property name="entidad">
+			<column name="ENTIDAD" />
+		</property>
+		<property name="distrito">
+			<column name="DISTRITO" />
+		</property>
+		<property name="fuarInicial">
+			<column name="FUAR_INICIAL" />
+		</property>
+		<property name="fuarFinal">
+			<column name="FUAR_FINAL" />
+		</property>
+		<property name="anio">
+			<column name="ANIO" />
+		</property>
+		<property name="primerFuar">
+			<column name="PRIMER_FUAR" />
+		</property>
+		<property name="necInicial">
+			<column name="NEC_INICIAL" />
+		</property>
+		<property name="necFinal">
+			<column name="NEC_FINAL" />
+		</property>
+	
+	</class>
+</hibernate-mapping>

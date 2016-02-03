@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mx.ine.sscc.modelo.entidad.siirfe"
+	schema="CONCILIACIONES">
+	<class name="FuarExtranjeroSiirfe" table="FUAREXTRANJERO">
+		<comment>Mapeo de la tabla FUAR (CONCILIACIONES)</comment>
+
+		<id name="fuar">
+			<column name="FUAR" />
+		</id>
+		<property name="estatusFuarId">
+			<column name="ESTATUSFUAR_ID" />
+		</property>
+		<property name="nombre">
+			<column name="NOMBRE" />
+		</property>
+		<property name="apellidoPaterno">
+			<column name="APELLIDO_PATERNO" />
+		</property>
+		<property name="apellidoMaterno">
+			<column name="APELLIDO_MATERNO" />
+		</property>
+		<property name="claveElector">
+			<column name="CLAVE_ELECTOR" />
+		</property>	
+		<property name="pais">
+			<column name="PAIS" />
+		</property>	
+		<property name="fechaNacimiento" type="java.sql.Timestamp">
+			<column name="FECHA_NACIMIENTO" sql-type="DATE" />
+		</property>
+		<property name="lugarNacimiento">
+			<column name="LUGAR_NACIMIENTO" />
+		</property>		
+		<property name="sexo">
+			<column name="SEXO" />
+		</property>				
+		<property name="escolaridad">
+			<column name="ESCOLARIDAD" />
+		</property>				
+		<property name="ocupacion">
+			<column name="OCUPACION" />
+		</property>				
+		<property name="curp">
+			<column name="CURP" />
+		</property>			
+		<property name="estado">
+			<column name="ESTADO" />
+		</property>				
+		<property name="ciudad">
+			<column name="CIUDAD" />
+		</property>		
+		<property name="calle">
+			<column name="CALLE" />
+		</property>		
+		<property name="numeroInterior">
+			<column name="NUMERO_INTERIOR" />
+		</property>			
+		<property name="numeroExterior">
+			<column name="NUMERO_EXTERIOR" />
+		</property>			
+		<property name="codigoPostal">
+			<column name="CODIGO_POSTAL" />
+		</property>	
+		<property name="telefono">
+			<column name="TELEFONO" />
+		</property>	
+		<property name="correoElectronico">
+			<column name="CORREO_ELECTRONICO" />
+		</property>		
+		<property name="fechaRegSi" type="java.sql.Timestamp">
+			<column name="FECHA_REG_SI" sql-type="DATE" />
+		</property>
+		<property name="fechaRechazo" type="java.sql.Timestamp">
+			<column name="FECHA_RECHAZO" sql-type="DATE" />
+		</property>		
+		<property name="adscripcionAutJud">
+			<column name="ADSCRIPCION_AUT_JUD" />
+		</property>		
+		<property name="tipoResolucion">
+			<column name="TIPO_RESOLUCION" />
+		</property>		
+		<property name="numeroExpediente">
+			<column name="NUM_EXPEDIENTE" />
+		</property>						
+		<property name="numeroOficioResp">
+			<column name="NUM_OFICIO_RESP" />
+		</property>			
+	
+		<property name="fechaTramiteSi" type="java.sql.Timestamp">
+			<column name="FECHA_TRAMITE_SI" sql-type="DATE" />
+		</property>
+		<property name="guiaPaqueteria">
+			<column name="GUIA_PAQUETERIA" />
+		</property>	
+		<property name="fechaEntrega" type="java.sql.Timestamp">
+			<column name="FECHA_ENTREGA" sql-type="DATE" />
+		</property>		
+		<property name="cic">
+			<column name="CIC" />
+		</property>
+		<property name="fechaEnvio" type="java.sql.Timestamp">
+			<column name="FECHA_ENVIO" sql-type="DATE" />
+		</property>	
+		<property name="faltante">
+			<column name="FALTANTE" />
+		</property>
+		<property name="solicitudMacId">
+			<column name="SOLICITUDMAC_ID" />
+		</property>
+		<property name="claveUnicaCiudadanoId">
+			<column name="CLAVEUNICACIUDADANO_ID" />
+		</property>
+		<property name="ciudadanoIdentificadoId">
+			<column name="CIUDADANOIDENTIFICADO_ID" />
+		</property>
+		<property name="tramiteId">
+			<column name="TRAMITE_ID" />
+		</property>
+		<property name="utilizado">
+			<column name="UTILIZADO" />
+		</property>
+		<property name="movimientoInicial">
+			<column name="MOVIMIENTO_INICIAL" />
+		</property>
+		<property name="movimientoAplicado">
+			<column name="MOVIMIENTO_APLICADO" />
+		</property>		
+		<property name="movimientoMultiple">
+			<column name="MOVIMIENTO_MULTIPLE" />
+		</property>			
+		<property name="lote">
+			<column name="LOTE" />
+		</property>		
+		<property name="endoso">
+			<column name="ENDOSO" />
+		</property>				
+		<property name="tipoDemandaId">
+			<column name="TIPODEMANDA_ID" />
+		</property>			
+		<property name="pendienteEnProceso">
+			<column name="PENDIENTE_EN_PROCESO" />
+		</property>			
+		<property name="fechaTramite" type="java.sql.Timestamp">
+			<column name="FECHA_TRAMITE" sql-type="DATE" />
+		</property>					
+		<property name="fechaUltimaActualizacion" type="java.sql.Timestamp">
+			<column name="FECHA_ULTIMA_ACTUALIZACION" sql-type="DATE" />
+		</property>					
+		<property name="folioEntregaCredencial">
+			<column name="FOLIO_ENTREGA_CREDENCIAL" />
+		</property>
+		<property name="controlSincronizacion">
+			<column name="CONTROL_SINCRONIZACION" />
+		</property>
+		<property name="colonia">
+			<column name="COLONIA" />
+		</property>
+		<property name="municipio">
+			<column name="MUNICIPIO" />
+		</property>
+		<property name="procesoSincronizacionId">
+			<column name="PROCESOSINCRONIZACION_ID" />
+		</property>		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="sscc">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="sscc-api-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/sscc-api/sscc-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="sscc-modelo-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/sscc-modelo/sscc-modelo">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/entidades-externas-web/target/classes"/>
+        <property name="context-root" value="sscc-unicom"/>
+        <property name="component.inclusion.patterns" value="**/*.class,**/*.xml,**/*.jsp,**/*.wsdl,**/*.wsdd,**/*.properties,WEB-INF/lib/axis*.jar,WEB-INF/lib/commons-discovery-*.jar,WEB-INF/lib/wsdl4j*.jar,WEB-INF/lib/sscc-modelo-*.jar,WEB-INF/lib/sscc-api-*.jar"/>
+    </wb-module>
+</project-modules>

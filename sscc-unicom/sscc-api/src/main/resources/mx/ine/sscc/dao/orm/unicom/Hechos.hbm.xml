@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mx.ine.sscc.modelo.entidad"
+	schema="CREDENCIALEXTRANJERO">
+	<class name="Hechos" table="HECHOS">
+		<comment>Mapeo de la tabla HECHOS (CREDENCIALEXTRANJERO)</comment>
+
+		<id name="hechosId">
+			<column name="HECHOS_ID" />
+		</id>
+		<property name="descripcion">
+				<column name="DESCRIPCION" />
+		</property>
+					
+	</class>
+</hibernate-mapping>

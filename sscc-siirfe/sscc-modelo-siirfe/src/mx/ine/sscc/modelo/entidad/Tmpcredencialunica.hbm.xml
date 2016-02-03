@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28/10/2015 10:22:08 AM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="mx.ine.sscc.modelo.entidad.Tmpcredencialunica" table="TMPCREDENCIALUNICA" schema="CONCILIACIONES" optimistic-lock="version">
+        <id name="credencialId" type="long">
+            <column name="CREDENCIAL_ID" precision="18" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="ciudadanoId" type="long">
+            <column name="CIUDADANO_ID" precision="18" scale="0" not-null="true" />
+        </property>
+        <property name="claveunicaciudadanoId" type="java.lang.Long">
+            <column name="CLAVEUNICACIUDADANO_ID" precision="18" scale="0" />
+        </property>
+        <property name="estatuscredencialId" type="java.lang.Byte">
+            <column name="ESTATUSCREDENCIAL_ID" precision="2" scale="0" />
+        </property>
+        <property name="claveElector" type="string">
+            <column name="CLAVE_ELECTOR" length="18" not-null="true" />
+        </property>
+        <property name="numEmisionCredencial" type="byte">
+            <column name="NUM_EMISION_CREDENCIAL" precision="2" scale="0" not-null="true" />
+        </property>
+        <property name="ocr" type="string">
+            <column name="OCR" length="44" />
+        </property>
+        <property name="cic" type="string">
+            <column name="CIC" length="10" />
+        </property>
+        <property name="curp" type="string">
+            <column name="CURP" length="18" />
+        </property>
+        <property name="fechaInscripcionPadron" type="date">
+            <column name="FECHA_INSCRIPCION_PADRON" length="7" not-null="true" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="32" />
+        </property>
+        <property name="apellidoPaterno" type="string">
+            <column name="APELLIDO_PATERNO" length="32" />
+        </property>
+        <property name="apellidoMaterno" type="string">
+            <column name="APELLIDO_MATERNO" length="32" />
+        </property>
+        <property name="huellasId" type="java.lang.Long">
+            <column name="HUELLAS_ID" precision="18" scale="0" />
+        </property>
+        <property name="estatusciudadanoId" type="byte">
+            <column name="ESTATUSCIUDADANO_ID" precision="2" scale="0" not-null="true" />
+        </property>
+        <property name="tipobajapadronId" type="java.lang.Byte">
+            <column name="TIPOBAJAPADRON_ID" precision="2" scale="0" />
+        </property>
+        <property name="residenteExtranjero" type="java.lang.Boolean">
+            <column name="RESIDENTE_EXTRANJERO" precision="1" scale="0" />
+        </property>
+        <property name="fechaCreacion" type="date">
+            <column name="FECHA_CREACION" length="7" />
+        </property>
+        <property name="fechaUltimoTramite" type="date">
+            <column name="FECHA_ULTIMO_TRAMITE" length="7" />
+        </property>
+        <property name="vigenciaCredencial" type="date">
+            <column name="VIGENCIA_CREDENCIAL" length="7" />
+        </property>
+        <property name="entidadId" type="byte">
+            <column name="ENTIDAD_ID" precision="2" scale="0" not-null="true" />
+        </property>
+        <property name="seccion" type="string">
+            <column name="SECCION" length="4" />
+        </property>
+        <property name="tiporeincorporacionpadronId" type="java.lang.Byte">
+            <column name="TIPOREINCORPORACIONPADRON_ID" precision="2" scale="0" />
+        </property>
+        <property name="reporteroboextravioId" type="java.lang.Long">
+            <column name="REPORTEROBOEXTRAVIO_ID" precision="18" scale="0" />
+        </property>
+        <property name="estatusroboextravio" type="java.lang.Byte">
+            <column name="ESTATUSROBOEXTRAVIO" precision="2" scale="0" />
+        </property>
+        <property name="causaroboextravio" type="java.lang.Byte">
+            <column name="CAUSAROBOEXTRAVIO" precision="2" scale="0" />
+        </property>
+        <property name="fechaInsercion" type="date">
+            <column name="FECHA_INSERCION" length="7" />
+        </property>
+    </class>
+</hibernate-mapping>

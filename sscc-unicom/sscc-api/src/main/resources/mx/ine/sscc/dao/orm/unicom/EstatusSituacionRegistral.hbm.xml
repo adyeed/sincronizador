@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mx.ine.sscc.modelo.entidad"
+	schema="CREDENCIALEXTRANJERO">
+	<class name="EstatusSituacionRegistral" table="ESTATUSITUACIONREGISTRAL">
+		<comment>Mapeo de la tabla ESTATUSITUACIONREGISTRAL (CREDENCIALEXTRANJERO)</comment>
+
+		<id name="estatusId">
+			<column name="ESTATUS_ID" />
+		</id>
+		<property name="descripcion">
+				<column name="DESCRIPCION" />
+		</property>
+		<property name="activo">
+				<column name="ACTIVO" />
+		</property>
+	</class>
+</hibernate-mapping>

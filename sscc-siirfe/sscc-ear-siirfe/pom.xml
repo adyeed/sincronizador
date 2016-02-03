@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>sscc-siirfe</artifactId>
+    <groupId>mx.ine.sscc.siirfe</groupId>
+    <version>1.0.0</version>
+  </parent>
+  <artifactId>sscc-ear-siirfe</artifactId>
+  	<name>sscc-ear-siirfe</name>
+  	<description>EAR para Entidades Externas SIRFE</description>
+  	<packaging>ear</packaging> 
+	
+    <dependencies>	    
+		<dependency>
+					<groupId>mx.ine.sscc.siirfe</groupId>
+					<artifactId>sscc-web-siirfe</artifactId>
+					<version>${project.version}</version>
+					<type>war</type>
+		</dependency>		
+	</dependencies>
+	
+    <build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.4.2</version>
+				<configuration>
+					<version>5</version>
+					<generateApplicationXml>true</generateApplicationXml>
+					<modules>
+						<webModule>
+							<groupId>mx.ine.sscc.siirfe</groupId>
+							<artifactId>sscc-web-siirfe</artifactId>
+							<bundleFileName>sscc-siirfe.war</bundleFileName>
+							<contextRoot>/sscc-siirfe</contextRoot>
+						</webModule>						
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+    
+</project>

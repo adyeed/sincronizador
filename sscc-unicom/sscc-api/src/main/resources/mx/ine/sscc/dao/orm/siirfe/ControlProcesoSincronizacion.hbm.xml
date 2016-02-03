@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mx.ine.sscc.modelo.entidad.siirfe"
+	schema="CONCILIACIONES">
+	<class name="ControlProcesoSincronizacion" table="CONTROLPROCESOSINCRONIZACION">
+		<comment>Mapeo de la tabla ControlProcesoSincronizacion</comment>
+
+		<composite-id>
+			<key-many-to-one name="procesoSincronizacion"
+				class="mx.ine.sscc.modelo.entidad.siirfe.ProcesoSincronizacion"
+				column="PROCESOSINCRONIZACION_ID" />
+
+			<key-property name="secuencia" column="SECUENCIA" />
+		</composite-id>
+
+		<property name="descripcionSecuencia">
+			<column name="DESCRIPCION_SECUENCIA" />
+		</property>
+
+		<property name="error">
+			<column name="ERROR" />
+		</property>
+
+		<property name="registros">
+			<column name="REGISTROSPORPROCESAR" />
+		</property>
+
+		<property name="registrosProcesados">
+			<column name="REGISTROSPROCESADOS" />
+		</property>
+
+		<property name="fechaInicio" type="java.sql.Timestamp">
+			<column name="FECHA_INICIO" sql-type="DATE" />
+		</property>
+
+		<property name="fechaFin" type="java.sql.Timestamp">
+			<column name="FECHA_FIN" sql-type="DATE" />
+		</property>
+
+	</class>
+</hibernate-mapping>

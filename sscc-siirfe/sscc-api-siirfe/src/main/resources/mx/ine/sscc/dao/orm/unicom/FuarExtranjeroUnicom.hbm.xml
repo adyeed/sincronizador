@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mx.ine.sscc.modelo.entidad.unicom"
+	schema="CREDENCIALEXTRANJERO">
+	<class name="FuarExtranjeroUnicom" table="FUAREXTRANJERO1">
+		<comment>Mapeo de la tabla FUAR (CREDENCIALEXTRANJERO)</comment>
+
+		<id name="fuar">
+			<column name="FUAR" />
+		</id>
+		<property name="estatusFuarId">
+			<column name="ESTATUSFUAR_ID" />
+		</property>
+		<property name="nombre">
+			<column name="NOMBRE" />
+		</property>
+		<property name="apellidoPaterno">
+			<column name="APELLIDO_PATERNO" />
+		</property>
+		<property name="apellidoMaterno">
+			<column name="APELLIDO_MATERNO" />
+		</property>
+		<property name="claveElector">
+			<column name="CLAVE_ELECTOR" />
+		</property>
+		<property name="pais">
+			<column name="PAIS" />
+		</property>
+		<property name="fechaNacimiento" type="java.sql.Timestamp">
+			<column name="FECHA_NACIMIENTO" sql-type="DATE" />
+		</property>
+		<property name="estado">
+			<column name="ESTADO" />
+		</property>
+		<property name="ciudad">
+			<column name="CIUDAD" />
+		</property>
+		<property name="telefono">
+			<column name="TELEFONO" />
+		</property>
+		<property name="correoElectronico">
+			<column name="CORREO_ELECTRONICO" />
+		</property>
+		<property name="guiaPaqueteria">
+			<column name="GUIA_PAQUETERIA" />
+		</property>
+		<property name="solicitudMacId">
+			<column name="SOLICITUDMAC_ID" />
+		</property>
+		<property name="fechaTramite" type="java.sql.Timestamp">
+			<column name="FECHA_TRAMITE" sql-type="DATE" />
+		</property>
+		<property name="fechaUltimaActualizacion" type="java.sql.Timestamp">
+			<column name="FECHA_ULTIMA_ACTUALIZACION" sql-type="DATE" />
+		</property>
+		<property name="curp">
+			<column name="CURP" />
+		</property>
+		<property name="calle">
+			<column name="CALLE" />
+		</property>
+		<property name="numeroInterior">
+			<column name="NUMERO_INTERIOR" />
+		</property>
+		<property name="numeroExterior">
+			<column name="NUMERO_EXTERIOR" />
+		</property>
+		<property name="codigoPostal">
+			<column name="CODIGO_POSTAL" />
+		</property>
+		<property name="escolaridad">
+			<column name="ESCOLARIDAD" />
+		</property>
+		<property name="ocupacion">
+			<column name="OCUPACION" />
+		</property>
+		<property name="sexo">
+			<column name="SEXO" />
+		</property>
+		<property name="lugarNacimiento">
+			<column name="LUGAR_NACIMIENTO" />
+		</property>
+		<property name="colonia">
+			<column name="COLONIA" />
+		</property>
+		<property name="municipio">
+			<column name="MUNICIPIO" />
+		</property>
+		<property name="procesoSincronizacionId">
+			<column name="PROCESOSINCRONIZACION_ID" />
+		</property>		
+
+	</class>
+</hibernate-mapping>

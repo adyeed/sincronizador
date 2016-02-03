@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mx.ine.sscc.modelo.entidad"
+	schema="CREDENCIALEXTRANJERO">
+	<class name="Reenvio" table="REENVIO">
+		<comment>Mapeo de la tabla REENVIO (CREDENCIALEXTRANJERO)</comment>
+
+		<composite-id>
+			<key-property name="folioSi" column="FOLIO_SI" />
+			<key-property name="fechaEnvio" type="java.sql.Timestamp">
+				<column name="FECHA_ENVIO" sql-type="DATE"/>
+			</key-property>
+		</composite-id>
+		<property name="estatusEnvio">
+			<column name="ESTATUS_ENVIO" />
+		</property>
+		<property name="fechaActualizacion" type="java.sql.Timestamp">
+			<column name="FECHA_ACTUALIZACION" sql-type="DATE" />
+		</property>	
+
+			
+	</class>
+</hibernate-mapping>

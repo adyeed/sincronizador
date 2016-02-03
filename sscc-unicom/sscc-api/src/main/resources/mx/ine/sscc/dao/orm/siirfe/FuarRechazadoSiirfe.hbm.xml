@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mx.ine.sscc.modelo.entidad.siirfe"
+	schema="CONCILIACIONES">
+	<class name="FuarRechazadoSiirfe" table="FUAR_RECHAZADO">
+		<comment>Mapeo de la tabla FUAR_RECHAZADO (CREDENCIALEXTRANJERO)</comment>
+
+		<id name="id">
+			<column name="ID" />
+		</id>
+		<property name="fuar">
+			<column name="FUAR" />
+		</property>
+		<property name="clave">
+			<column name="CLAVE" />
+		</property>
+		<property name="descripcion">
+			<column name="DESCRIPCION" />
+		</property>
+		<property name="usuarioAudit">
+			<column name="USUARIO_AUDIT" />
+		</property>
+		<property name="fechaAudit" type="java.sql.Date">
+			<column name="FECHA_AUDIT" sql-type="DATE" />
+		</property>
+		<property name="controlSincronizacion">
+			<column name="CONTROL_SINCRONIZACION" />
+		</property>
+		<property name="procesoSincronizacionId">
+			<column name="PROCESOSINCRONIZACION_ID" />
+		</property>
+	</class>
+</hibernate-mapping>

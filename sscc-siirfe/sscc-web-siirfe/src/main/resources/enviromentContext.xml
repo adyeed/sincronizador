@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd">
+
+	<context:annotation-config />
+
+	<!-- servicios -->
+	<context:component-scan base-package="mx.ine.sscc.servicios" />
+
+	<!-- dao's -->
+	<context:component-scan base-package="mx.ine.sscc.servicios.dao" />
+
+	<!-- Aspectos -->
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+	<bean id="logAspect" class="mx.ine.sscc.aspecto.AspectoLogger" />
+
+	<beans profile="produccion">
+
+		<bean
+			class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+			<property name="locations">
+				<list>
+					<value>file:${mx.org.ife.rfe.siirfe.config.dir}/sscc/config.properties
+					</value>
+				</list>
+			</property>
+			<property name="ignoreUnresolvablePlaceholders" value="true" />
+		</bean>
+
+		<!-- base de datos -->
+		<import resource="classpath:daoTestContext.xml" />
+		<!-- transaction manager -->
+		<bean id="transactionManager"
+			class="org.springframework.transaction.jta.WebLogicJtaTransactionManager" />
+	</beans>
+
+	<beans profile="pruebas">
+		<bean
+			class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+			<property name="locations">
+				<list>
+					<value>classpath:test/config.properties</value>
+				</list>
+			</property>
+			<property name="ignoreUnresolvablePlaceholders" value="true" />
+		</bean>
+		<!-- transaction manager -->
+		<bean id="transactionManager"
+			class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+			<property name="sessionFactory" ref="sessionFactory" />
+		</bean>
+		<!-- base de datos -->
+		<import resource="classpath:test/daoTestContext.xml" />
+
+		<tx:annotation-driven transaction-manager="transactionManager" />
+	</beans>
+
+
+</beans>

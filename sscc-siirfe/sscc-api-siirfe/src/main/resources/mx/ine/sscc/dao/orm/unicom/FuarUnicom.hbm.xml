@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mx.ine.sscc.modelo.entidad.unicom"
+	schema="CREDENCIALEXTRANJERO">
+	<class name="FuarUnicom" table="FUAR1">
+		<comment>Mapeo de la tabla FUAR (CREDENCIALEXTRANJERO)</comment>
+
+		<id name="fuar">
+			<column name="FUAR" />
+		</id>
+		<property name="fechaTraminte" type="java.sql.Timestamp">
+			<column name="FECHA_TRAMITE" sql-type="DATE" />
+		</property>
+		<property name="fechaUltimaActualizacion" type="java.sql.Timestamp">
+			<column name="FECHA_ULTIMA_ACTUALIZACION" sql-type="DATE" />
+		</property>
+		<property name="estatusFuarId">
+			<column name="ESTATUSFUAR_ID" />
+		</property>
+		
+		<property name="solicitudMac">
+			<column name="SOLICITUDMAC_ID" />
+		</property>
+		<property name="modulo">
+			<column name="MODULO" />
+		</property>
+	
+		<property name="folioEntregaCredencial">
+			<column name="FOLIO_ENTREGA_CREDENCIAL" />
+		</property>		
+		<property name="fechaNacimiento" type="java.sql.Timestamp">
+			<column name="FECHA_NACIMIENTO" sql-type="DATE" />
+		</property>
+		<property name="telefono">
+			<column name="TELEFONO" />
+		</property>		
+		<property name="correoElectronico">
+			<column name="CORREO_ELECTRONICO" />
+		</property>	
+		<property name="codigoPostal">
+			<column name="CODIGO_POSTAL" />
+		</property>		
+		<property name="guiaPaqueteria">
+			<column name="GUIA_PAQUETERIA" />
+		</property>		
+
+		<property name="procesoSincronizacionId">
+			<column name="PROCESOSINCRONIZACION_ID" />
+		</property>		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mx.ine.sscc.modelo.entidad.siirfe"
+	schema="CONCILIACIONES">
+	<class name="ProcesoSincronizacion" table="PROCESOSINCRONIZACION">
+		<comment>Mapeo de la tabla BITACORA</comment>
+
+		<id name="procesoSincronizacionId" column="PROCESOSINCRONIZACION_ID">
+			<generator class="sequence">
+				<param name="sequence">SEQ_PROCESOSINCRONIZACION</param>
+			</generator>
+		</id>
+
+		<property name="nombreProceso">
+			<column name="PROCESO_NOMBRE" />
+		</property>
+
+		<property name="fechaInicio" type="java.sql.Timestamp">
+			<column name="FECHA_INICIAL" sql-type="DATE" />
+		</property>
+
+		<property name="fechaFin" type="java.sql.Timestamp">
+			<column name="FECHA_FIN" sql-type="DATE" />
+		</property>
+
+		<property name="estatus">
+			<column name="ESTATUS" />
+		</property>
+
+		<property name="respuesta">
+			<column name="RESPUESTA" />
+		</property>
+
+		<property name="secuencia">
+			<column name="SECUENCIA" />
+		</property>
+
+		<list name="controlProcesoSincronizacion" table="CONTROLPROCESOSINCRONIZACION"
+			cascade="save-update"  inverse="true" lazy="false" fetch="select">
+			<key>
+				<column name="PROCESOSINCRONIZACION_ID" not-null="true" />
+			</key>
+			<list-index column="secuencia" base="0" />
+			<one-to-many
+				class="mx.ine.sscc.modelo.entidad.siirfe.ControlProcesoSincronizacion" />
+		</list>
+
+	</class>
+</hibernate-mapping>

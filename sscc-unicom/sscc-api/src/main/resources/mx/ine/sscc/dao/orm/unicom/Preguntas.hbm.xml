@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mx.ine.sscc.modelo.entidad"
+	schema="CREDENCIALEXTRANJERO">
+	<class name="Preguntas" table="PREGUNTAS">
+		<comment>Mapeo de la tabla PREGUNTAS (CREDENCIALEXTRANJERO)</comment>
+
+		<composite-id name="id"
+			class="mx.ine.sscc.modelo.entidad.PreguntasPK">
+			<key-property name="preguntaId" type="java.lang.Integer">
+				<column name="PREGUNTA_ID" precision="1" scale="0" />
+			</key-property>
+			<key-property name="cuestionarioId" type="java.lang.Integer">
+				<column name="CUESTIONARIO_ID" precision="2" scale="0" />
+			</key-property>
+
+		</composite-id>
+
+		<property name="descripcion">
+			<column name="DESCRIPCION" />
+		</property>
+		<property name="activo">
+			<column name="ACTIVO" />
+		</property>
+		<property name="reqCandidatos">
+			<column name="REQ_CANDIDATOS" />
+		</property>
+		<property name="reqArchivo">
+			<column name="REQ_ARCHIVO" />
+		</property>
+		<property name="tipoId">
+			<column name="TIPO_ID" />
+		</property>
+	</class>
+</hibernate-mapping>

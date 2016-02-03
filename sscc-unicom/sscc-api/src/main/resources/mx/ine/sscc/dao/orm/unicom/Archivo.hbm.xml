@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mx.ine.sscc.modelo.entidad"
+	schema="CREDENCIALEXTRANJERO">
+	<class name="Archivo" table="ARCHIVO">
+		<comment>Mapeo de la tabla ARCHIVO (CREDENCIALEXTRANJERO)</comment>
+
+		<id name="archivoId">
+			<column name="ARCHIVO_ID" />
+		</id>
+		<property name="documento">
+				<column name="DOCUMENTO" />
+		</property>
+	
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mx.ine.sscc.modelo.entidad.siirfe"
+	schema="NOTIFICACIONESEXTRANJERO">
+	<class name="Notificacion" table="NOTIFICACION">
+		<comment>Mapeo de la tabla FUAR (NOTIFICACIONEXTRANJERO)</comment>
+
+		<id name="notificacionId">
+			<column name="NOTIFICACION_ID" />
+			<generator class="sequence">
+				<param name="sequence">SEQ_NOTIFICACION</param>
+			</generator>
+		</id>
+		<property name="modulo">
+			<column name="MODULO_MRE_ID" />
+		</property>
+		<property name="fuar">
+			<column name="FUAR" />
+		</property>
+		<property name="fechaIngresoCecyrd" type="java.sql.Timestamp">
+			<column name="FECHA_INGRESO_CECYRD" sql-type="DATE" />
+		</property>
+		<property name="fechaProceso" type="java.sql.Timestamp">
+			<column name="FECHA_PROCESO" sql-type="DATE" />
+		</property>
+
+		<property name="notificacion" type="clob">
+			<column name="NOTIFICACION" />
+		</property>
+
+		<property name="versionXml">
+			<column name="VERSION_XML" />
+		</property>
+		<property name="detalleRechazo" type="clob">
+			<column name="DETALLE_RECHAZO" />
+		</property>
+		<property name="estatusCredencialId">
+			<column name="ESTATUSCREDENCIAL_ID" />
+		</property>
+		<property name="estatusNotificacionId">
+			<column name="ESTATUSNOTIFICACION_ID" />
+		</property>
+		<property name="tipoNotificacionId">
+			<column name="TIPONOTIFICACION_ID" />
+		</property>
+		<property name="procesoDigitalizacionId">
+			<column name="PROCESODIGITALIZACION_ID" />
+		</property>
+		<property name="fechaTramite" type="java.sql.Timestamp">
+			<column name="FECHA_TRAMITE" sql-type="DATE" />
+		</property>
+
+		<property name="paisId">
+			<column name="PAIS_ID" />
+		</property>
+
+		<property name="folioMRE">
+			<column name="FOLIO_MRE" />
+		</property>
+
+	</class>
+</hibernate-mapping>

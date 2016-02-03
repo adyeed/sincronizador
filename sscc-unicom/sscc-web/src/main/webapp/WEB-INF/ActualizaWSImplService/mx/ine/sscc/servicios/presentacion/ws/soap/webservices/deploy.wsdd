@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ActualizaWSImplService WSDL service -->
+
+  <service name="ActualizaWSImpl" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservices.soap.ws.presentacion.servicios.sscc.ine.mx"/>
+      <parameter name="wsdlServiceElement" value="ActualizaWSImplService"/>
+      <parameter name="schemaQualified" value="http://xml.apache.org/xml-soap,http://bean.modelo.sscc.ine.mx,http://webservices.soap.ws.presentacion.servicios.sscc.ine.mx"/>
+      <parameter name="wsdlServicePort" value="ActualizaWSImpl"/>
+      <parameter name="className" value="mx.ine.sscc.servicios.presentacion.ws.soap.webservices.ActualizaWSImpl"/>
+      <parameter name="wsdlPortType" value="ActualizaWSImpl"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://webservices.soap.ws.presentacion.servicios.sscc.ine.mx" xmlns:retNS="http://webservices.soap.ws.presentacion.servicios.sscc.ine.mx" xmlns:rtns="http://bean.modelo.sscc.ine.mx" name="actualizaWS" qname="operNS:actualizaWS" returnQName="retNS:actualizaWSReturn" returnType="rtns:RespuestaSincronizacion" soapAction="">
+        <parameter xmlns:pns="http://webservices.soap.ws.presentacion.servicios.sscc.ine.mx" xmlns:tns="http://bean.modelo.sscc.ine.mx" qname="pns:datosEntrada" type="tns:DatosEntrada"/>
+      </operation>
+      <parameter name="allowedMethods" value="actualizaWS"/>
+
+      <arrayMapping xmlns:ns="http://webservices.soap.ws.presentacion.servicios.sscc.ine.mx" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_anyType" type="java:java.lang.Object[]" innerType="cmp-ns:anyType" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://webservices.soap.ws.presentacion.servicios.sscc.ine.mx" qname="ns:&gt;actualizaWSResponse" type="java:mx.ine.sscc.servicios.presentacion.ws.soap.webservices.ActualizaWSResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://bean.modelo.sscc.ine.mx" qname="ns:RespuestaSincronizacion" type="java:mx.ine.sscc.modelo.bean.RespuestaSincronizacion" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://bean.modelo.sscc.ine.mx" qname="ns:DatosEntrada" type="java:mx.ine.sscc.modelo.bean.DatosEntrada" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://xml.apache.org/xml-soap" qname="ns:mapItem" type="java:org.apache.xml.xml_soap.MapItem" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://webservices.soap.ws.presentacion.servicios.sscc.ine.mx" qname="ns:&gt;actualizaWS" type="java:mx.ine.sscc.servicios.presentacion.ws.soap.webservices.ActualizaWS" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

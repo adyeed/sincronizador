@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mx.ine.sscc.modelo.entidad.siirfe"
+	schema="ANALISISREGISTRAL">
+	<class name="RespuestasSiirfe" table="RESPUESTAS">
+		<comment>Mapeo de la tabla RESPUESTAS (ANALISISREGISTRAL)</comment>
+
+		<composite-id>
+			<key-property name="fuar" column="FUAR" />
+			<key-property name="instrumentoId" column="INSTRUMENTO_ID" />
+			<key-property name="preguntaId" column="PREGUNTA_ID" />
+			<key-property name="candidatoId" column="CANDIDATO_ID" />
+		</composite-id>
+		
+		<many-to-one name="archivo" class="mx.ine.sscc.modelo.entidad.siirfe.ArchivoSiirfe"
+			cascade="save-update">
+			<column name="ARCHIVO_ID" precision="5" scale="0" />
+		</many-to-one>
+		
+		<many-to-one name="hechos" class="mx.ine.sscc.modelo.entidad.siirfe.HechosSiirfe"  cascade="save-update">
+			<column name="HECHOS_ID" precision="5" scale="0" />
+		</many-to-one>
+		<property name="respAfirmativa" type="java.lang.Boolean">
+			<column name="RESP_AFIRMATIVA" length="1" />
+		</property>
+		<property name="fechaAlta" type="date">
+			<column name="FECHA_ALTA" length="7" not-null="true" />
+		</property>
+		<property name="estatus" type="string">
+			<column name="ESTATUS" length="1" not-null="true" />
+		</property>
+		<property name="respAnio" type="java.lang.Integer">
+			<column name="RESP_ANIO" precision="3" scale="0" />
+		</property>
+		<property name="respNombre" type="string">
+			<column name="RESP_NOMBRE" length="32" />
+		</property>
+		<property name="respApellidoP" type="string">
+			<column name="RESP_APELLIDO_P" length="32" />
+		</property>
+		<property name="respApellidoM" type="string">
+			<column name="RESP_APELLIDO_M" length="32" />
+		</property>
+		<property name="respEntNac" type="string">
+			<column name="RESP_ENT_NAC" length="32" />
+		</property>
+		<property name="respFecNac" type="date">
+			<column name="RESP_FEC_NAC" length="7" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

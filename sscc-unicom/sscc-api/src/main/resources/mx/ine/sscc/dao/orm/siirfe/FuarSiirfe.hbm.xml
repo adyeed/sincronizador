@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mx.ine.sscc.modelo.entidad.siirfe"
+	schema="CONCILIACIONES">
+	<class name="FuarSiirfe" table="FUAR">
+		<comment>Mapeo de la tabla FUAR (CONCILIACIONES)</comment>
+
+		<id name="fuar">
+			<column name="FUAR" />
+		</id>
+		<property name="fechaTraminte" type="java.sql.Timestamp">
+			<column name="FECHA_TRAMITE" sql-type="DATE" />
+		</property>
+		<property name="fechaUltimaActualizacion" type="java.sql.Timestamp">
+			<column name="FECHA_ULTIMA_ACTUALIZACION" sql-type="DATE" />
+		</property>
+		<property name="estatusFuarId">
+			<column name="ESTATUSFUAR_ID" />
+		</property>
+		<property name="faltante">
+			<column name="FALTANTE" />
+		</property>
+		<property name="solicitudMac">
+			<column name="SOLICITUDMAC_ID" />
+		</property>
+		<property name="claveUnicaCiudadanoId">
+			<column name="CLAVEUNICACIUDADANO_ID" />
+		</property>
+		<property name="ciudadanoIdentificadoId">
+			<column name="CIUDADANOIDENTIFICADO_ID" />
+		</property>
+		<property name="tramiteId">
+			<column name="TRAMITE_ID" />
+		</property>
+		<many-to-one name="modulo" column="MODULO_ID" lazy="false" class="mx.ine.sscc.modelo.entidad.siirfe.Modulo"/>
+
+		<property name="georeferenciaId">
+			<column name="GEOREFERENCIA_ID" />
+		</property>
+		<property name="entidad">
+			<column name="ENTIDAD" />
+		</property>
+		<property name="distrito">
+			<column name="DISTRITO" />
+		</property>
+		<property name="municipio">
+			<column name="MUNICIPIO" />
+		</property>	
+		<property name="seccion">
+			<column name="SECCION" />
+		</property>	
+		<property name="localidad">
+			<column name="LOCALIDAD" />
+		</property>
+		<property name="manzana">
+			<column name="MANZANA" />
+		</property>
+		<property name="utilizado">
+			<column name="UTILIZADO" />
+		</property>
+		<property name="movimientoInicial">
+			<column name="MOVIMIENTO_INICIAL" />
+		</property>
+		<property name="movimientoAplicado">
+			<column name="MOVIMIENTO_APLICADO" />
+		</property>		
+		<property name="movimientoMultiple">
+			<column name="MOVIMIENTO_MULTIPLE" />
+		</property>				
+		<property name="lote">
+			<column name="LOTE" />
+		</property>		
+		<property name="endoso">
+			<column name="ENDOSO" />
+		</property>		
+		<property name="tipoDemandaId">
+			<column name="TIPODEMANDA_ID" />
+		</property>			
+		<property name="pendienteEnProceso">
+			<column name="PENDIENTE_EN_PROCESO" />
+		</property>	
+		<property name="distritoDestino">
+			<column name="DISTRITO_DESTINO" />
+		</property>	
+		<property name="moduloDestino">
+			<column name="MODULO_DESTINO" />
+		</property>		
+		<property name="moduloDistrito">
+			<column name="MODULO_DISTRITO" />
+		</property>		
+		<property name="procesadoFecha" type="java.sql.Timestamp">
+			<column name="PROCESADO_FECHA" sql-type="DATE" />
+		</property>
+		<property name="faltanteFecha" type="java.sql.Timestamp">
+			<column name="FALTANTE_FECHA" sql-type="DATE" />
+		</property>	
+		<property name="tipoSolicitudMacId">
+			<column name="TIPOSOLICITUDMAC_ID" />
+		</property>	
+		<property name="moduloEntidad">
+			<column name="MODULO_ENTIDAD" />
+		</property>	
+		<property name="ciudadanoId">
+			<column name="CIUDADANO_ID" />
+		</property>		
+		<property name="mediodIdentificacion">
+			<column name="MED_IDENTIFICACION" />
+		</property>		
+		<property name="docFotografia">
+			<column name="DOC_FOTOGRAFIA" />
+		</property>						
+		<property name="comprobanteDomicilio">
+			<column name="COMP_DOMICILIO" />
+		</property>	
+		<property name="folioEntregaCredencial">
+			<column name="FOLIO_ENTREGA_CREDENCIAL" />
+		</property>		
+		<property name="testigo1Foto">
+			<column name="TESTIGO1_FOTO" />
+		</property>			
+		<property name="testigo2Foto">
+			<column name="TESTIGO2_FOTO" />
+		</property>		
+		<property name="testigo1Domicilio">
+			<column name="TESTIGO1_DOMI" />
+		</property>		
+		<property name="testigo2Domicilio">
+			<column name="TESTIGO2_DOMI" />
+		</property>	
+		<property name="formaIdentificacionCredencialId">
+			<column name="FORMAIDENTIFICACIONCRED_ID" />
+		</property>	
+		<property name="residenteExtranjero">
+			<column name="RESIDENTE_EXTRANJERO" />
+		</property>		
+		<property name="semanaOperativa">
+			<column name="SEMANA_OPERATIVA" />
+		</property>	
+		<property name="campana">
+			<column name="CAMPANA" />
+		</property>		
+		<property name="listaNominal">
+			<column name="LISTA_NOMINAL" />
+		</property>			
+		<property name="mapeoEstatusId">
+			<column name="MAPEO_ESTATUS_ID" />
+		</property>					
+		<property name="nombre">
+			<column name="NOMBRE" />
+		</property>
+		<property name="apellidoPaterno">
+			<column name="APELLIDO_PATERNO" />
+		</property>
+		<property name="apellidoMaterno">
+			<column name="APELLIDO_MATERNO" />
+		</property>
+		<property name="fechaNacimiento" type="java.sql.Timestamp">
+			<column name="FECHA_NACIMIENTO" sql-type="DATE" />
+		</property>
+		<property name="telefono">
+			<column name="TELEFONO" />
+		</property>		
+		<property name="correoElectronico">
+			<column name="CORREO_ELECTRONICO" />
+		</property>	
+		<property name="codigoPostal">
+			<column name="CODIGO_POSTAL" />
+		</property>		
+		<property name="guiaPaqueteria">
+			<column name="GUIA_PAQUETERIA" />
+		</property>		
+		<property name="paqueteMacId">
+			<column name="PAQUETEMAC_ID" />
+		</property>			
+		<property name="controlSincronizacion">
+			<column name="CONTROL_SINCRONIZACION" />
+		</property>
+		<property name="procesoSincronizacionId">
+			<column name="PROCESOSINCRONIZACION_ID" />
+		</property>		
+	</class>
+</hibernate-mapping>

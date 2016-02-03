@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mx.ine.sscc.modelo.entidad"
+	schema="CREDENCIALEXTRANJERO">
+	<class name="Cuestionario" table="CUESTIONARIO">
+		<comment>Mapeo de la tabla CUESTIONARIO (CREDENCIALEXTRANJERO)</comment>
+
+		<id name="cuestionarioId">
+			<column name="CUESTIONARIO_ID" />
+		</id>
+		<property name="descripcion">
+				<column name="DESCRIPCION" />
+		</property>
+		<many-to-one name="tipoRegistral" column="TIPO_ID" lazy="false" class="mx.ine.sscc.modelo.entidad.TipoRegistral"/>
+		<property name="activo">
+			<column name="ACTIVO" />
+		</property>
+	
+	</class>
+</hibernate-mapping>
